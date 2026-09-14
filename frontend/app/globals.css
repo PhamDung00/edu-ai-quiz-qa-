@@ -1,0 +1,55 @@
+:root {
+  --bg: #f6f8fc;
+  --surface: #ffffff;
+  --text: #162033;
+  --muted: #68748a;
+  --primary: #3157e2;
+  --primary-dark: #2445bd;
+  --border: #e4e9f2;
+  --success: #117a4b;
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+.container { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+.nav {
+  height: 68px; display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px;
+  position: sticky; top: 0; z-index: 20;
+}
+.brand { font-weight: 800; color: var(--primary); }
+.navlinks { display: flex; gap: 18px; color: var(--muted); }
+.hero { padding: 72px 0 38px; text-align: center; }
+.hero h1 { font-size: clamp(36px, 7vw, 68px); line-height: 1.02; margin: 0 0 18px; }
+.hero p { color: var(--muted); font-size: 18px; max-width: 760px; margin: 0 auto 28px; }
+.actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.btn { border: 0; border-radius: 12px; padding: 12px 18px; font-weight: 700; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary { background: white; border: 1px solid var(--border); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+.card h3 { margin-top: 0; }
+.muted { color: var(--muted); }
+.section { padding: 28px 0 56px; }
+.form { display: grid; gap: 14px; max-width: 720px; }
+.input { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 12px; background: white; }
+.quiz-option { display: block; margin: 10px 0; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: white; }
+.chat { display: grid; gap: 12px; margin: 18px 0; }
+.message { padding: 14px 16px; border-radius: 16px; max-width: 80%; white-space: pre-wrap; }
+.message.user { margin-left: auto; background: var(--primary); color: white; }
+.message.assistant { background: white; border: 1px solid var(--border); }
+.stat { font-size: 30px; font-weight: 800; margin: 8px 0; }
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; }
+  .navlinks { display: none; }
+}
